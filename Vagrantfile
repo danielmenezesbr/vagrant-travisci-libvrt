@@ -52,6 +52,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.provider :libvirt do |v, override|
       v.memory = 1024
+      v.management_network_mac = "0800271dfee1"
     end
 	
 	config.vbguest.auto_update = false
