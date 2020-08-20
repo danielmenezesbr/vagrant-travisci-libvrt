@@ -21,8 +21,8 @@ install:
 # Install vagrant-libvirt Vagrant plugin
 - sudo vagrant plugin install vagrant-libvirt
 
-vagrant box add --name cdaf/WindowsServerDC --version 2020.05.14
-vagrant box list
+- vagrant box add --name cdaf/WindowsServerDC --version 2020.05.14
+- vagrant box list
 
 script:
 - sudo vagrant up --provider=libvirt
