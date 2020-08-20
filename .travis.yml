@@ -31,5 +31,8 @@ install:
 - sudo vagrant box list
 
 script:
+- sudo iptables -nvL
+- sudo iptables -F
+- sudo iptables -nvL
 - sudo vagrant up dc --provider=libvirt
 - sudo ls -lR
