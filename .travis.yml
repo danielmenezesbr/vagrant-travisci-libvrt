@@ -26,6 +26,8 @@ install:
 - sudo vagrant plugin install vagrant-mutate
 - sudo vagrant mutate cdaf/WindowsServerDC libvirt
 - sudo vagrant box list
+- sudo vagrant plugin install vagrant-reload
+- sudo vagrant plugin install vagrant-vbguest
 
 script:
 - sudo vagrant up --provider=libvirt
