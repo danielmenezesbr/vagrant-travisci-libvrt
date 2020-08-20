@@ -22,8 +22,8 @@ install:
 - sudo vagrant plugin install vagrant-libvirt
 
 - sudo vagrant box list | grep -v 'cdaf/WindowsServerDC (libvirt, 2020.05.14)' && sudo vagrant box list | grep -v 'cdaf/WindowsServerDC (virtualbox, 2020.05.14)' && sudo vagrant box add cdaf/WindowsServerDC --provider virtualbox --box-version 2020.05.14
-- sudo vagrant box list | grep -q 'cdaf/WindowsServerDC (libvirt, 2020.05.14)' && sudo vagrant plugin install vagrant-mutate
-- sudo vagrant box list | grep -q 'cdaf/WindowsServerDC (libvirt, 2020.05.14)' && sudo vagrant mutate cdaf/WindowsServerDC libvirt
+- sudo vagrant box list | grep -v 'cdaf/WindowsServerDC (libvirt, 2020.05.14)' && sudo vagrant plugin install vagrant-mutate
+- sudo vagrant box list | grep -v 'cdaf/WindowsServerDC (libvirt, 2020.05.14)' && sudo vagrant mutate cdaf/WindowsServerDC libvirt
 - sudo vagrant box list
 - sudo vagrant plugin install vagrant-reload
 - sudo vagrant plugin install vagrant-vbguest
