@@ -31,7 +31,13 @@ Vagrant.configure("2") do |config|
     config.vm.graceful_halt_timeout = 600
     
     config.vm.hostname = "winserver"
-    config.vm.network "private_network", ip: "192.168.56.2"
+    config.vm.network "private_network",
+        ip: "192.168.56.2",
+        libvirt__network_name: "infosec-net",
+        libvirt__dhcp_enabled: false,
+        libvirt__host_ip: "192.168.56.2",
+        libvirt__guest_ipv6: false,
+        autostart: true
     config.vm.provision "shell", path: "provision/uninstall-windefeder.ps1"
     config.vm.provision "shell", reboot: true
     config.vm.provision "shell", path: "provision/ad.ps1"
@@ -42,6 +48,10 @@ Vagrant.configure("2") do |config|
 	  v.cpus = 1
 	  v.gui = true
 	  v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+    end
+
+    config.vm.provider :libvirt do |v, override|
+      v.memory = 1024
     end
 	
 	config.vbguest.auto_update = false

@@ -27,6 +27,8 @@ install:
 - sudo vagrant box list
 - sudo vagrant plugin install vagrant-reload
 - sudo vagrant plugin install vagrant-vbguest
+- sudo vagrant box list | grep -q 'cdaf/WindowsServerDC (virtualbox, 2020.05.14)' && sudo vagrant box remove cdaf/WindowsServerDC --provider virtualbox --box-version 2020.05.14
+- sudo vagrant box list
 
 script:
 - sudo vagrant up dc --provider=libvirt
