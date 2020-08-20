@@ -22,6 +22,8 @@ install:
 - sudo vagrant plugin install vagrant-libvirt
 
 - sudo vagrant box add cdaf/WindowsServerDC --provider virtualbox --box-version 2020.05.14
+- sudo vagrant plugin install vagrant-mutate
+- sudo vagrant mutate cdaf/WindowsServerDC libvirt
 - sudo vagrant box list
 
 script:
