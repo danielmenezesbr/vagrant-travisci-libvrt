@@ -56,6 +56,7 @@ Vagrant.configure("2") do |config|
       v.graphics_port = 5901
       v.graphics_ip = '0.0.0.0'
       v.video_type = 'qxl'
+      v.libvirt__dhcp_enabled = false
     end
 	
 	config.vbguest.auto_update = false
