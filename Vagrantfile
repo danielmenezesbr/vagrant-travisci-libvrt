@@ -53,6 +53,9 @@ Vagrant.configure("2") do |config|
     config.vm.provider :libvirt do |v, override|
       v.memory = 1024
       v.management_network_mac = "0800271dfee1"
+      v.graphics_port = 5901
+      v.graphics_ip = '0.0.0.0'
+      v.video_type = 'qxl'
     end
 	
 	config.vbguest.auto_update = false
